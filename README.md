@@ -33,16 +33,22 @@ init page was split up for 3.14.4. See `PREREG.md`.
     number";
   - the 3.13 docs say the legacy lock API "now always uses PyMutex" (3.15). 3.13's code uses OS
     locks.
-- Runtime checks of the behaviour claims behind the review (`check.py`, expected outcomes
-  fixed in `EXPECTED.md` before the run) are queued. Results will be added to GRADING.md.
+- **Runtime checks (2026-11-02): all 18 pre-registered cells matched.** On 3.14.10,
+  `utcfromtimestamp(Fraction(1, 2))` raises `TypeError` (it works on 3.15.2), and
+  `sys.thread_info.lock` is `semaphore` on 3.13.18 and 3.14.10 (`pymutex` on 3.15.2). So both
+  problems are confirmed by running the interpreters. P3 stays failed. Output:
+  `results/runtime-checks.json`.
 
-The verdicts were reached by AI agents reading the sources. No human has checked them.
+The verdicts were reached by AI agents reading the sources and running the interpreters. No
+human has checked them. Follow-up: munimtechnologies/backport-version-notes runs the same
+check on Django and NumPy.
 
 ## Files
 
 - `PREREG.md`: question, prior art, rules, gate and predictions, fixed before the data run.
 - `GRADING.md`, `FIXLIST.md`: the graded result and the hand-checked fix list.
-- `results/`: the run 1 outputs (summary, future notes, lost and gone notes, tags).
+- `results/`: the run 1 outputs (summary, future notes, lost and gone notes, tags) and the
+  runtime-check output.
 - `notes.py`: scanner, owner matching, branch report, gate and grading (pure functions).
 - `job.py`: the data run (streams tarballs from codeload.github.com; nothing is stored).
 - `test_notes.py`: tests with hand-traced expected values.

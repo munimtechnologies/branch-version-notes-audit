@@ -22,7 +22,9 @@ pair, but of a kind the labels did not anticipate. In both, a backport copied a 
 that describes a 3.15-only change into an older branch, where the behaviour does not exist.
 "Wrong version" assumed the behaviour exists on the branch under a wrong number. Here there
 is no right number, because the branch never gets the change. These two are reported below
-and in `FIXLIST.md`, labelled as found outside the pre-registered category.
+and in `FIXLIST.md`, labelled as found outside the pre-registered category. The runtime
+checks (section below) confirm that the behaviour is absent on both branches, so neither
+moves into the "wrong version" label and P3 stays failed.
 
 Exploratory: no `next` placeholder was left in the docs at any of the 50 release tags.
 
@@ -52,6 +54,8 @@ Each row was read in the rst at the branch head named above.
 - 3.13's code: `Python/thread_pthread.h` at the 3.13 head allocates a `sem_t` (or a
   `pthread_mutex_t` plus condition variable when semaphores are unusable). It does not use
   `PyMutex`. On 3.15 (`Python/thread.c`), `PyThread_allocate_lock` allocates a `PyMutex`.
+- Runtime: `sys.thread_info.lock` reports `semaphore` on 3.13.18 and 3.14.10 and `pymutex`
+  on 3.15.2 (check `thread_lock`, below).
 - The 3.14 docs got the same section without the 3.15 notes (`Doc/c-api/synchronization.rst`
   at the 3.14 head has none), so the 3.13 copy is the odd one out.
 - Fixability: 3.13 is now a security-only branch (devguide.python.org/versions), so a docs-only
@@ -68,11 +72,11 @@ Each row was read in the rst at the branch head named above.
   tag with them: v3.14.4.
 - On the same 3.14 page, `datetime.fromtimestamp` and `date.fromtimestamp` carry no such note,
   so only `utcfromtimestamp` got it.
+- Runtime: `datetime.datetime.utcfromtimestamp(Fraction(1, 2))` raises `TypeError` on 3.14.10
+  (and 3.13.18) and returns `1970-01-01T00:00:00.500000` on 3.15.2 (check
+  `utcfromtimestamp_fraction`, below). So the 3.14 docs describe behaviour 3.14 does not have.
 - 3.14 is a bugfix branch, so this one can be fixed. A duplicate search (python/cpython issues
   and PRs, "utcfromtimestamp" with "real number" / "3.14 versionchanged") found nothing.
-- Runtime confirmation is queued (`check.py`, check `utcfromtimestamp_fraction`, expected:
-  error on 3.14, ok on 3.15; fixed in `EXPECTED.md` before the run). Until it reports, the
-  claim that 3.14 rejects a Fraction rests on What's New 3.15 and on reading, not on a run.
 
 ## Hand review: the 11 lost bugfix-release notes
 
@@ -89,6 +93,27 @@ Each row was read in the rst at the branch head named above.
 So no lost note beyond the known pair is a problem. A side observation, not graded: after
 GH-127158, the 3.12 and 3.13 docs carry no note at all for the 3.12.8 / 3.13.1 change to
 `shutil.which`'s PATHEXT handling.
+
+## Runtime checks (run 2026-11-02)
+
+Job `doc-runtime-checks-v1`, 2026-11-02 07:28-07:31 UTC, python-build-standalone interpreters
+3.10.22, 3.11.18, 3.12.16, 3.13.18, 3.14.10, 3.15.2 and 3.16.0a1 (Linux x86-64, via uv
+0.13.6). The expected outcome of every graded cell was fixed in `check.py` and `EXPECTED.md`
+before the run. **All 18 graded cells matched; 0 mismatches; 7 exploratory cells.** The
+checks for this audit:
+
+| Check | 3.13 | 3.14 | 3.15 | 3.16a1 (exploratory) | Expected | Held? |
+|---|---|---|---|---|---|---|
+| `thread_lock` (`sys.thread_info.lock`) | semaphore | semaphore | pymutex | pymutex | not pymutex / not pymutex / pymutex | yes (3 of 3) |
+| `utcfromtimestamp_fraction` | TypeError | TypeError | ok (00:00:00.5) | ok | error / error / ok | yes (3 of 3) |
+| `fromtimestamp_fraction` (tz=UTC) | TypeError (exploratory) | TypeError | ok | ok | - / error / ok | yes (2 of 2) |
+
+What this changes: Problems A and B are now confirmed by running the interpreters, not only
+by reading the source and What's New. Neither result moves either problem into the
+pre-registered "wrong version" label (the behaviour is absent on the branch, so no version
+number would be right there), so **P3 stays FAILED at 0 of 2**. The other six checks in the
+job belong to munimtechnologies/stdlib-deprecation-ledger and are reported in its GRADING.md.
+Limits: one platform (Linux), the latest micro release of each minor, one input (a Fraction).
 
 ## Limits
 
@@ -111,4 +136,4 @@ named in `PREREG.md` are still the nearest work. No issue or PR about either pro
 
 `results/run1-summary.json`, `results/future_notes.csv`, `results/lost_micro.csv`,
 `results/gone_micro.csv`, `results/next_at_tags.csv`, `results/tags.csv`; `check.py`,
-`test_check.py`, `EXPECTED.md` (runtime checks, queued).
+`test_check.py`, `EXPECTED.md` (runtime checks); `results/runtime-checks.json` (their output).
