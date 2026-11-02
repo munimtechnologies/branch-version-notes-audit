@@ -1,0 +1,491 @@
+{
+ "P0_gate": {
+  "details": {
+   ">= 90% of tags fetched (50 of 50)": true,
+   "control: LinkFallbackError documented at the 3.14 head with no future note": true,
+   "every fetched tag has >= 2000 version notes": true,
+   "known future: versionadded 3.15 on SetStackProtection at the 3.14 head": true,
+   "known lost: versionadded 3.14.1 on SetStackProtection gone from the 3.14 head": true
+  },
+  "verdict": "HELD"
+ },
+ "P1": {
+  "bar": 3,
+  "future_beyond_known": 10,
+  "verdict": "held"
+ },
+ "P2": {
+  "bar": 0.95,
+  "lost": 11,
+  "share": 0.9754464285714286,
+  "survived": 437,
+  "verdict": "held"
+ },
+ "P3": {
+  "candidates": 21,
+  "verdict": "pending hand review"
+ },
+ "per_branch": {
+  "3.12": {
+   "future": 1,
+   "gone": 9,
+   "lost": 7,
+   "next_at_tags": 0,
+   "survived": 109
+  },
+  "3.13": {
+   "future": 6,
+   "gone": 7,
+   "lost": 2,
+   "next_at_tags": 0,
+   "survived": 119
+  },
+  "3.14": {
+   "future": 5,
+   "gone": 0,
+   "lost": 2,
+   "next_at_tags": 0,
+   "survived": 113
+  },
+  "3.15": {
+   "future": 0,
+   "gone": 0,
+   "lost": 0,
+   "next_at_tags": 0,
+   "survived": 96
+  }
+ },
+ "source": {
+  "heads": {
+   "3.12": {
+    "commit": "3d6d2a63a23ee4d340ed8df6de0bd70ef175c4cf",
+    "notes": 4467,
+    "owners": 10738,
+    "rst_files": 503
+   },
+   "3.13": {
+    "commit": "42155a0feaca9ba6991942c323cbe9fb7278be3c",
+    "notes": 5042,
+    "owners": 11899,
+    "rst_files": 517
+   },
+   "3.14": {
+    "commit": "1f66a0313ecef57daedeb5f25ba11ec430e4e721",
+    "notes": 5484,
+    "owners": 12348,
+    "rst_files": 543
+   },
+   "3.15": {
+    "commit": "fe47a436a373177dcff6909929ad3de689727670",
+    "notes": 5933,
+    "owners": 12732,
+    "rst_files": 557
+   }
+  },
+  "started_at": "2026-11-02T04:56:44Z",
+  "tags": [
+   {
+    "commit": "0fb18b02c8ad56299d6a2910be0bab8ad601ef24",
+    "future": 0,
+    "micro": 103,
+    "next": 0,
+    "notes": 4390,
+    "tag": "v3.12.0"
+   },
+   {
+    "commit": "2305ca51448552542b2414186252123a8dc87db7",
+    "future": 0,
+    "micro": 104,
+    "next": 0,
+    "notes": 4407,
+    "tag": "v3.12.1"
+   },
+   {
+    "commit": "6abddd9f6afdddc09031989e0deb25e301ecf315",
+    "future": 0,
+    "micro": 106,
+    "next": 0,
+    "notes": 4420,
+    "tag": "v3.12.2"
+   },
+   {
+    "commit": "f6650f9ad73359051f3e558c2431a109bc016664",
+    "future": 0,
+    "micro": 106,
+    "next": 0,
+    "notes": 4408,
+    "tag": "v3.12.3"
+   },
+   {
+    "commit": "8e8a4baf652f6e1cee7acde9d78c4b6154539748",
+    "future": 0,
+    "micro": 110,
+    "next": 0,
+    "notes": 4419,
+    "tag": "v3.12.4"
+   },
+   {
+    "commit": "ff3bc82f7c9882c27aad597aac79355da7257186",
+    "future": 0,
+    "micro": 113,
+    "next": 0,
+    "notes": 4424,
+    "tag": "v3.12.5"
+   },
+   {
+    "commit": "a4a2d2b0d85273f746c3834ce2753e19c898949d",
+    "future": 0,
+    "micro": 115,
+    "next": 0,
+    "notes": 4427,
+    "tag": "v3.12.6"
+   },
+   {
+    "commit": "0b05ead877f909b7efe712db758012d9dbece7ce",
+    "future": 0,
+    "micro": 115,
+    "next": 0,
+    "notes": 4437,
+    "tag": "v3.12.7"
+   },
+   {
+    "commit": "2dc476bcb9142cd25d7e1d52392b73a3dcdf1756",
+    "future": 0,
+    "micro": 115,
+    "next": 0,
+    "notes": 4443,
+    "tag": "v3.12.8"
+   },
+   {
+    "commit": "fdb81425a9ad683f8c24bf5cbedc9b96baf00cd2",
+    "future": 0,
+    "micro": 115,
+    "next": 0,
+    "notes": 4458,
+    "tag": "v3.12.9"
+   },
+   {
+    "commit": "0cc81280367df838c4b199f8f0378837165071c2",
+    "future": 1,
+    "micro": 115,
+    "next": 0,
+    "notes": 4452,
+    "tag": "v3.12.10"
+   },
+   {
+    "commit": "55fee9cf216abe4ec0d1139f94b1930fbd0c7644",
+    "future": 1,
+    "micro": 119,
+    "next": 0,
+    "notes": 4456,
+    "tag": "v3.12.11"
+   },
+   {
+    "commit": "4a5632fbf9bf59477c540e3f53fa7cdbeea3e3f5",
+    "future": 1,
+    "micro": 119,
+    "next": 0,
+    "notes": 4456,
+    "tag": "v3.12.12"
+   },
+   {
+    "commit": "3bb231a6a5dc02b95658877318bf61501a7209e9",
+    "future": 1,
+    "micro": 122,
+    "next": 0,
+    "notes": 4459,
+    "tag": "v3.12.13"
+   },
+   {
+    "commit": "2abcf904b8dac8c999d2b3aac76681abb333798a",
+    "future": 1,
+    "micro": 124,
+    "next": 0,
+    "notes": 4461,
+    "tag": "v3.12.14"
+   },
+   {
+    "commit": "e848e4b09ca4bc67c0041c9ce7526dae471d4c36",
+    "future": 1,
+    "micro": 130,
+    "next": 0,
+    "notes": 4467,
+    "tag": "v3.12.15"
+   },
+   {
+    "commit": "2c2462afc5d978d31f3d073001fc202d269917ff",
+    "future": 1,
+    "micro": 130,
+    "next": 0,
+    "notes": 4467,
+    "tag": "v3.12.16"
+   },
+   {
+    "commit": "60403a5409ff2c3f3b07dd2ca91a7a3e096839c7",
+    "future": 1,
+    "micro": 101,
+    "next": 0,
+    "notes": 4777,
+    "tag": "v3.13.0"
+   },
+   {
+    "commit": "067145177975eadd61a0c907d0d177f7b6a5a3de",
+    "future": 1,
+    "micro": 101,
+    "next": 0,
+    "notes": 4813,
+    "tag": "v3.13.1"
+   },
+   {
+    "commit": "4f8bb3947cfbc20f970ff9d9531e1132a9e95396",
+    "future": 1,
+    "micro": 102,
+    "next": 0,
+    "notes": 4833,
+    "tag": "v3.13.2"
+   },
+   {
+    "commit": "6280bb547840b609feedb78887c6491af75548e8",
+    "future": 1,
+    "micro": 102,
+    "next": 0,
+    "notes": 4839,
+    "tag": "v3.13.3"
+   },
+   {
+    "commit": "8a526ec7cbea8fafc9dae4b3dd6371906b9be342",
+    "future": 1,
+    "micro": 114,
+    "next": 0,
+    "notes": 4861,
+    "tag": "v3.13.4"
+   },
+   {
+    "commit": "6cb20a219a860eaf687b2d968b41c480c7461909",
+    "future": 1,
+    "micro": 114,
+    "next": 0,
+    "notes": 4863,
+    "tag": "v3.13.5"
+   },
+   {
+    "commit": "4e665351082c50018fb31d80db25b4693057393e",
+    "future": 1,
+    "micro": 114,
+    "next": 0,
+    "notes": 4865,
+    "tag": "v3.13.6"
+   },
+   {
+    "commit": "bcee1c322115c581da27600f2ae55e5439c027eb",
+    "future": 1,
+    "micro": 114,
+    "next": 0,
+    "notes": 4867,
+    "tag": "v3.13.7"
+   },
+   {
+    "commit": "a15ae614deb58f78f9f4aa11ed18a0afc6a9df7d",
+    "future": 1,
+    "micro": 120,
+    "next": 0,
+    "notes": 4880,
+    "tag": "v3.13.8"
+   },
+   {
+    "commit": "8183fa5e3f78ca6ab862de7fb8b14f3d929421e0",
+    "future": 1,
+    "micro": 120,
+    "next": 0,
+    "notes": 4880,
+    "tag": "v3.13.9"
+   },
+   {
+    "commit": "4fd884356d7f29b2a07a4274bef04998ac96d529",
+    "future": 7,
+    "micro": 123,
+    "next": 0,
+    "notes": 4929,
+    "tag": "v3.13.10"
+   },
+   {
+    "commit": "627894459a84be3488a1789919679c997056a03c",
+    "future": 7,
+    "micro": 123,
+    "next": 0,
+    "notes": 4929,
+    "tag": "v3.13.11"
+   },
+   {
+    "commit": "1cbe481834751b0125e006042ffbd8cd5eaec8a8",
+    "future": 7,
+    "micro": 123,
+    "next": 0,
+    "notes": 4941,
+    "tag": "v3.13.12"
+   },
+   {
+    "commit": "01104ce1beb3135c2e0c01ec835b994c1f55a1c0",
+    "future": 7,
+    "micro": 123,
+    "next": 0,
+    "notes": 4946,
+    "tag": "v3.13.13"
+   },
+   {
+    "commit": "fd17997c3866d61e0e7bd8201b1d8f35b40a40bd",
+    "future": 7,
+    "micro": 128,
+    "next": 0,
+    "notes": 4952,
+    "tag": "v3.13.14"
+   },
+   {
+    "commit": "4061bc4c35f7c26f25264666d4ba083b93d2f6f9",
+    "future": 6,
+    "micro": 128,
+    "next": 0,
+    "notes": 5027,
+    "tag": "v3.13.15"
+   },
+   {
+    "commit": "cbc944f4bc59639a444dd971c737788ba2283a91",
+    "future": 6,
+    "micro": 138,
+    "next": 0,
+    "notes": 5042,
+    "tag": "v3.13.16"
+   },
+   {
+    "commit": "64e080d38154391ff2d2caa1161c298bb7cd8f30",
+    "future": 6,
+    "micro": 138,
+    "next": 0,
+    "notes": 5042,
+    "tag": "v3.13.17"
+   },
+   {
+    "commit": "0d4bd512fc429e3d4eacdd113c975e161f21644d",
+    "future": 6,
+    "micro": 138,
+    "next": 0,
+    "notes": 5042,
+    "tag": "v3.13.18"
+   },
+   {
+    "commit": "ebf955df7a89ed0c7968f79faec1de49f61ed7cb",
+    "future": 0,
+    "micro": 104,
+    "next": 0,
+    "notes": 5279,
+    "tag": "v3.14.0"
+   },
+   {
+    "commit": "57e0d177c26d4a508ef46adae9cbae46fca39f70",
+    "future": 3,
+    "micro": 111,
+    "next": 0,
+    "notes": 5346,
+    "tag": "v3.14.1"
+   },
+   {
+    "commit": "df793163d5821791d4e7caf88885a2c11a107986",
+    "future": 3,
+    "micro": 111,
+    "next": 0,
+    "notes": 5345,
+    "tag": "v3.14.2"
+   },
+   {
+    "commit": "323c59a5e348347be2ce2b7ea55fcb30bf68b2d3",
+    "future": 3,
+    "micro": 111,
+    "next": 0,
+    "notes": 5356,
+    "tag": "v3.14.3"
+   },
+   {
+    "commit": "23116f998f6789d8c2fbe5ed5b8146854c8c2a4f",
+    "future": 4,
+    "micro": 110,
+    "next": 0,
+    "notes": 5362,
+    "tag": "v3.14.4"
+   },
+   {
+    "commit": "5607950ef232dad16d75c0cf53101d9649d89115",
+    "future": 4,
+    "micro": 114,
+    "next": 0,
+    "notes": 5359,
+    "tag": "v3.14.5"
+   },
+   {
+    "commit": "c63aec69bd59c55314c06c23f4c22c03de76fe45",
+    "future": 4,
+    "micro": 119,
+    "next": 0,
+    "notes": 5364,
+    "tag": "v3.14.6"
+   },
+   {
+    "commit": "823f0323ee6ec1402088b73bce1a38473cac36dc",
+    "future": 4,
+    "micro": 121,
+    "next": 0,
+    "notes": 5451,
+    "tag": "v3.14.7"
+   },
+   {
+    "commit": "8e6e75d9102e39bed2a2b279203a396741180f12",
+    "future": 4,
+    "micro": 131,
+    "next": 0,
+    "notes": 5471,
+    "tag": "v3.14.8"
+   },
+   {
+    "commit": "ead82c07db1f111d613926ed1b6667411d768125",
+    "future": 4,
+    "micro": 132,
+    "next": 0,
+    "notes": 5473,
+    "tag": "v3.14.9"
+   },
+   {
+    "commit": "b703b2c5e704341d61e367b9b940b77ed11dded0",
+    "future": 5,
+    "micro": 132,
+    "next": 0,
+    "notes": 5484,
+    "tag": "v3.14.10"
+   },
+   {
+    "commit": "d220409a13b77de7a6c30abe16ea90db01528edc",
+    "future": 0,
+    "micro": 110,
+    "next": 0,
+    "notes": 5910,
+    "tag": "v3.15.0"
+   },
+   {
+    "commit": "c37e74cb6bcdadcd5f46f289498f6b3298ddee61",
+    "future": 0,
+    "micro": 115,
+    "next": 0,
+    "notes": 5916,
+    "tag": "v3.15.1"
+   },
+   {
+    "commit": "5e58eaad7c58df58dfa8ea549c87996e01dd1077",
+    "future": 0,
+    "micro": 115,
+    "next": 0,
+    "notes": 5933,
+    "tag": "v3.15.2"
+   }
+  ],
+  "tags_expected": 50,
+  "tags_fetched": 50
+ }
+}

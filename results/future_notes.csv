@@ -1,0 +1,13 @@
+branch,file,line,directive,version,removal,owner,first_tag
+3.12,Doc/c-api/long.rst,146,deprecated,3.14,,|c:function:PyLong_AsLong/c:function:PyLong_AS_LONG,v3.12.10
+3.13,Doc/c-api/float.rst,103,deprecated,3.14,,|c:macro:Py_HUGE_VAL,v3.13.10
+3.13,Doc/c-api/float.rst,157,deprecated,3.14,,|c:macro:Py_IS_FINITE,v3.13.10
+3.13,Doc/c-api/float.rst,166,deprecated,3.14,,|c:macro:Py_IS_INFINITY,v3.13.10
+3.13,Doc/c-api/float.rst,175,deprecated,3.14,,|c:macro:Py_IS_NAN,v3.13.10
+3.13,Doc/c-api/init.rst,2555,versionchanged,3.15,,,v3.13.10
+3.13,Doc/c-api/init.rst,2592,versionchanged,3.15,,|c:function:PyThread_allocate_lock,v3.13.10
+3.14,Doc/c-api/hash.rst,150,deprecated-removed,3.15,3.19,|c:var:PyHash_Func,v3.14.10
+3.14,Doc/c-api/threads.rst,609,versionadded,3.15,,|c:function:PyUnstable_ThreadState_SetStackProtection,v3.14.4
+3.14,Doc/c-api/threads.rst,619,versionadded,3.15,,|c:function:PyUnstable_ThreadState_ResetStackProtection,v3.14.4
+3.14,Doc/library/datetime.rst,1074,versionchanged,3.15,,datetime|classmethod:datetime.utcfromtimestamp,v3.14.4
+3.14,Doc/using/configure.rst,986,versionchanged,3.15,,|option:--with-system-libmpdec,v3.14.1

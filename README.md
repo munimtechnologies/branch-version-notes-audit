@@ -19,14 +19,38 @@ What prompted it: in the 3.14 docs, `PyUnstable_ThreadState_SetStackProtection()
 using them are incompatible with 3.14.0. The note and the warning changed when the C API
 init page was split up for 3.14.4. See `PREREG.md`.
 
+## Results (run 1, graded 2026-11-02; see GRADING.md)
+
+- Gate held. All 50 tags were read (4,390-5,933 version notes each).
+- **P1 held:** 10 future notes beyond the known pair at the four branch heads.
+- **P2 held:** 437 of 448 bugfix-release notes (97.5%) survive at the head.
+- **P3 failed:** none of the candidates is a "wrong version on this branch" under the
+  pre-registered label. Most future notes are intended forward references, such as
+  soft deprecations and planned removals.
+- **Two real problems outside that label** (`FIXLIST.md`). In each, a backport copied a
+  `main` note about a 3.15-only change into an older branch:
+  - the 3.14 docs say `datetime.utcfromtimestamp` "Changed in version 3.15: Accepts any real
+    number";
+  - the 3.13 docs say the legacy lock API "now always uses PyMutex" (3.15). 3.13's code uses OS
+    locks.
+- Runtime checks of the behaviour claims behind the review (`check.py`, expected outcomes
+  fixed in `EXPECTED.md` before the run) are queued. Results will be added to GRADING.md.
+
+The verdicts were reached by AI agents reading the sources. No human has checked them.
+
+## Files
+
 - `PREREG.md`: question, prior art, rules, gate and predictions, fixed before the data run.
+- `GRADING.md`, `FIXLIST.md`: the graded result and the hand-checked fix list.
+- `results/`: the run 1 outputs (summary, future notes, lost and gone notes, tags).
 - `notes.py`: scanner, owner matching, branch report, gate and grading (pure functions).
 - `job.py`: the data run (streams tarballs from codeload.github.com; nothing is stored).
 - `test_notes.py`: tests with hand-traced expected values.
+- `check.py`, `test_check.py`, `EXPECTED.md`: runtime checks behind the hand review (this
+  repo and munimtechnologies/stdlib-deprecation-ledger).
 
-Run it with `python -m unittest -v`, then `python job.py --out-dir OUT`. You need network
-access. Results, including failed predictions, will be added under `results/` with a
-hand-checked `FIXLIST.md`.
+Run it with `python -m unittest -v`, then `python job.py --out-dir OUT`, or
+`python check.py --out-dir OUT` (needs `uv`). You need network access.
 
 ## Licence
 

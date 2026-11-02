@@ -1,0 +1,17 @@
+branch,owner,directive,version,first_tag,last_tag,file,line
+3.12,asyncio|class:StreamReader/coroutinemethod:readuntil,versionadded,3.5.2,v3.12.0,v3.12.9,Doc/library/asyncio-stream.rst,259
+3.12,asyncio|coroutinemethod:loop.connect_accepted_socket,versionadded,3.5.3,v3.12.0,v3.12.9,Doc/library/asyncio-eventloop.rst,838
+3.12,asyncio|coroutinemethod:loop.create_datagram_endpoint,versionchanged,3.4.4,v3.12.0,v3.12.9,Doc/library/asyncio-eventloop.rst,604
+3.12,asyncio|coroutinemethod:loop.create_datagram_endpoint,versionchanged,3.8.1,v3.12.0,v3.12.9,Doc/library/asyncio-eventloop.rst,608
+3.12,asyncio|coroutinemethod:loop.create_server,versionchanged,3.5.1,v3.12.0,v3.12.9,Doc/library/asyncio-eventloop.rst,752
+3.12,asyncio|coroutinemethod:loop.sock_connect,versionchanged,3.5.2,v3.12.0,v3.12.9,Doc/library/asyncio-eventloop.rst,1059
+3.12,typing|data:NoReturn,versionadded,3.5.4,v3.12.0,v3.12.2,Doc/library/typing.rst,947
+3.12,typing|data:NoReturn,versionadded,3.6.2,v3.12.0,v3.12.3,Doc/library/typing.rst,948
+3.12,|cmdoption:-R,versionadded,3.2.3,v3.12.0,v3.12.0,Doc/using/cmdline.rst,381
+3.13,asyncio|class:StreamReader/coroutinemethod:readuntil,versionadded,3.5.2,v3.13.0,v3.13.2,Doc/library/asyncio-stream.rst,269
+3.13,asyncio|coroutinemethod:loop.connect_accepted_socket,versionadded,3.5.3,v3.13.0,v3.13.2,Doc/library/asyncio-eventloop.rst,858
+3.13,asyncio|coroutinemethod:loop.create_datagram_endpoint,versionchanged,3.4.4,v3.13.0,v3.13.2,Doc/library/asyncio-eventloop.rst,604
+3.13,asyncio|coroutinemethod:loop.create_datagram_endpoint,versionchanged,3.8.1,v3.13.0,v3.13.2,Doc/library/asyncio-eventloop.rst,611
+3.13,asyncio|coroutinemethod:loop.create_server,versionchanged,3.5.1,v3.13.0,v3.13.2,Doc/library/asyncio-eventloop.rst,764
+3.13,asyncio|coroutinemethod:loop.sock_connect,versionchanged,3.5.2,v3.13.0,v3.13.2,Doc/library/asyncio-eventloop.rst,1079
+3.13,|c:type:PyConfig/c:member:use_system_logger,versionadded,3.13.2,v3.13.2,v3.13.2,Doc/c-api/init_config.rst,1283
